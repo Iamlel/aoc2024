@@ -6,7 +6,7 @@ part1, part2 = 0, 0
 with open("input.txt", "r") as f:
     text = f.read()
     part1 = sum([int(a) * int(b) for a, b in pattern.findall(text)])
-    for invalid in ("do()" + text).split("don't()"):
+    for invalid in text.split("don't()"):
         part2 += sum([int(a) * int(b) for a, b in pattern.findall(invalid[:invalid.find("do()")])])
 
 print(f"Part1: {part1}")
