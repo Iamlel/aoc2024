@@ -14,7 +14,7 @@ def addAdjacentChanges(l):
     yield l[:-1]
 
 part1, part2 = 0, 0
-with open("input.txt", "r") as f:
+with open("inputs/input2.txt", "r") as f:
     for line in f.readlines():
         levels = [int(level) for level in line.split(" ")]
         changes = [a - b for a, b in zip(levels[:-1], levels[1:])]

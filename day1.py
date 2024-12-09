@@ -1,7 +1,7 @@
 import bisect
 
 nums1, nums2 = [], []
-with open("input.txt", "r") as f:
+with open("inputs/input1.txt", "r") as f:
     for num1, num2 in f.readlines().split("   "):
         new_line = line.split("   ")
         bisect.insort(nums1, int(new_line[0]))
