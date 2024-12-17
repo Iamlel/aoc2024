@@ -1,4 +1,4 @@
-from itertools import combinations, permutations
+from itertools import combinations
 
 # O(C(n ,2))
 # could have been O(n)
