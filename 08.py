@@ -3,13 +3,11 @@ import re
 
 tokensPattern = re.compile(r"[a-zA-Z\d]")
 
-tokens = {}
 part1, part2 = set(), 0
-map = []
 with open("inputs/input8.txt", 'r') as f:
     l = f.readline()
+    tokens = {}
     for y, line in enumerate([l] + f.readlines()):
-        map.append(list(line[:-1]))
         for token in tokensPattern.finditer(line):
             if (token.group() in tokens):
                 tokens[token.group()].append((token.start(), y))
@@ -33,5 +31,6 @@ with open("inputs/input8.txt", 'r') as f:
                 if (m * (x - dx) + dy == y):
                     part2 += 1
                     break
+                
 print(f"Part1: {len(part1)}")
 print(f"Part2: {part2}")
